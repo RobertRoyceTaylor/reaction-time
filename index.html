@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Time</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="">
+<!-- <h1 class="header title">Reaction Time</h1> -->
+
+<header>
+    <div>
+       <!-- <span><input type="text"></span>  -->
+       <span><button class="btn" id="hat-toggle">Hat</button></span> 
+       <span><label for="">Ball Color: </label><input type="color" id="ball-color" value="#FF0000"></span> 
+    </div>
+
+</header>
+<div>
+    <div class="light-dark-switch">
+        <div id="dot" class="dot-light"></div>
+    </div>
+</div>
+<h3 class="header start">Press Space or Click in Square to Start</h3>
+<p class="user-highscore">High Score: </p>
+
+<div class="difficulty">
+    <button class="btn easy btn-selected">Easy</button>   
+    <button class="btn medium">Medium</button>  
+    <button class="btn hard">Hard</button>
+</div>
+<div class="reset-container">
+    <button class="btn reset hidden">Reset</button>
+</div>
+<div class="timer-display"> 
+    <div id="time"></div>
+    <!-- <span id="min">00 </span> :
+    <span id="sec">00 </span> -->
+    <!-- <span id="ms">000</span> -->
+</div>
+<div class="click-region">
+    <div class="target hidden">
+        <div >
+            <img class="hat hidden"src="images/hat.png" alt="">
+        </div>
+    </div>
+</div>   
+
+
+<script src="script.js"></script>
+</body>
+</html>

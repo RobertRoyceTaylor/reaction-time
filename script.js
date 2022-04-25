@@ -35,7 +35,7 @@ function reactionTimer() {
   }
   time.innerHTML = `${min}:${sec}`
 
-  if (reactionSeconds === 0){
+  if (reactionSeconds === 0) {
     clearInterval(reactionInterval);
     reactionInterval = null;
     gameEnd();
@@ -122,8 +122,12 @@ let screenHeight = window.innerHeight;
 let started = false;
 let round = 0;
 let playerHighscore = round;
-let widthX = screenHeight - 200; //- 181;
-let heightY = screenWidth - 300; //- 287;
+
+let widthOffset = 200;
+let heightOffset = 300;
+
+let widthX = screenHeight - widthOffset; //- 181;
+let heightY = screenWidth - heightOffset; //- 287;
 
 //Accuracy of clicks
 let userClick = 1;
@@ -136,8 +140,15 @@ let highscore = document.querySelector(".user-highscore")
 function gameStart() {
   screenWidth = window.innerWidth;
   screenHeight = window.innerHeight;
-  widthX = screenWidth - 200;
-  heightY = screenHeight - 300;
+  
+  
+  if (screenWidth < 700){
+    widthOffset = 100;
+  }
+
+
+  widthX = screenWidth - widthOffset;
+  heightY = screenHeight - heightOffset;
   document.querySelector(".target").classList.remove("hidden") //unhides the target
   let randomStartX = Math.floor(randomNumber() * widthX); //Randomly selects the X position
   let randomStartY = Math.floor(randomNumber() * heightY); //Randomly selects the Y position
@@ -178,8 +189,14 @@ document.querySelector(".click-region").addEventListener("click", function () {
 function nextTarget() {
   screenWidth = window.innerWidth;
   screenHeight = window.innerHeight;
-  widthX = screenWidth - 200;
-  heightY = screenHeight - 300;
+
+  if (screenWidth < 600){
+    widthOffset = 100;
+  }
+
+
+  widthX = screenWidth - widthOffset;
+  heightY = screenHeight - heightOffset;
   let randomX = Math.floor(randomNumber() * widthX); //Randomly selects the X position
   let randomY = Math.floor(randomNumber() * heightY); //Randomly selects the Y position
   hitTarget.classList.add("pressed"); //changes the color of the target when "hit"

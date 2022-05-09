@@ -264,7 +264,7 @@ targetColor.addEventListener("change", function () {
 let audioOn = true;
 const audioButton = document.getElementById("volume")
 const audioIcon = document.getElementById("volume-icon")
-const targetSound = new Audio("beep.wav")
+const targetSound = new Audio("Beep.wav")
 
 function audioToggle() {
     if (audioOn !== false) {

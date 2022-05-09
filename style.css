@@ -1,170 +1,260 @@
+/* :root {
+    --light-mode-header: #;
+    --light-mode-background: #;
+    --light-mode-btn-background: #;
+    --light-mode-textcolor: #;
+    --light-mode-border: 1px solid #;
+    --light-mode-box-shadow: 0 1px 2px #;
+    
+
+    --dark-mode-header: #;
+    --dark-mode-background: #;
+    --dark-mode-btn-background: #;
+    --dark-mode-textcolor: #;
+    --dark-mode-border: 1px solid #;
+    --dark-mode-box-shadow: 0 1px 2px #;
+} */
+
+/* var(--text) */
+
+
+/* To do:
+- reorganize all css to be easier to read
+- remove redundancys
+- use root and var(); for colors
+- impliment dark mode */
+
 body {
+    margin: auto;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: auto;
+    background-color: rgb(240, 240, 240);
 }
 
-header {
-    background-color: #EAECEE;
-    margin-bottom: 5px;
-    padding: 15px;
-    /* filter: drop-shadow(0px 5px 10px #888888); */
+footer {
+    bottom: 20px;
+    color: gray;
+    position: fixed;
+    width: 100%;
 }
 
-.header-dark {
-    background-color: #313131;
+/* For Icons */
+.icon {
+    height: 14px;
+    width: 14px;
+    padding: 0 10px;
+    user-select: none;
+}
+
+/* Color Selector */
+
+#target-color {
+    position: absolute;
+    border: none;
+    background-color: inherit;
+    width: 30px;
+    height: 25px;
+    padding: 0%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+
+
+/* Top Bar */
+
+.top-nav {
+    background-color: rgb(223, 223, 223);
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgb(189, 189, 189);
 
 }
+
+.top-nav h3 {
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    margin: 0;
+}
+
+.top-nav p {
+    position: relative;
+    top: 20px;
+    left: -25px;
+    font-size: 10px;
+}
+
+.logo {
+    float: left;
+    user-select: none;
+}
+
+.logo-container {
+    padding-left: 90px;
+}
+
+.options-container {
+    padding-right: 50px;
+}
+
+.options {
+    float: right;
+    transition: all 0.3s ease 0s;
+}
+
+.top-nav .options:hover {
+    background-color: rgb(136, 136, 136);
+    cursor: pointer;
+}
+
+
+/* Gameplay */
 
 .click-region {
     position: relative;
-    margin: auto;
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 94%;
-    height: calc(100vh - 200px);
-    cursor: crosshair;
 
-}
-
-.dark-mode {
-    background-color: #393E46;
-    color: white;
-    border-color: white;
-}
-
-.btn {
     background-color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn-selected {
-    background-color: gray;
-    color: white;
-}
-
-.start {
-    width: 70%;
-    margin: auto;
-}
-
-.difficulty {
-    margin-bottom: 10px;
-    width: 70%;
+    border: 1px solid rgb(170, 170, 170);
+    box-shadow: inset 0 1px 3px rgb(189, 189, 189);
+    border-radius: 10px;
     margin: auto;
 
+    width: 90%;
+    height: calc(100vh - 300px);
+
+    overflow: auto;
+
 }
 
-.reset-container {
-    text-align: center;
-    width: 70%;
-    margin: auto;
+.info {
+    user-select: none;
+    font-size: 35px;
+    color: rgb(196, 196, 196);
 }
-
 
 
 .target {
-    position: absolute;
+    width: 50px;
     height: 50px;
-    width: 50px;
+
     border: 1px solid black;
-    background-color: #FF0000;
-    left: 0px;
-    top: 0px;
     border-radius: 100%;
-    /* cursor: crosshair; */
+    background-color: red;
+    box-shadow: 0 3px 2px rgb(73, 73, 73); 
+    /* change color */
+
+    position: absolute;
 }
 
-.hat {
-    position: relative;
-    width: 50px;
-    bottom: 20px;
+.target-hide {
+    visibility: hidden;
 }
 
-.hat-easy {
-    width: 50px;
-    bottom: 20px;
+#user-score {
+    font-size: 1.5rem;
+    width: 10%;
+    margin: 20px auto;
+    border: 1px solid rgb(170, 170, 170);
+    background-color: rgb(247, 247, 247);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 2px rgb(189, 189, 189);
+
 }
 
-.hat-medium {
-    width: 35px;
-    bottom: 15px;
+/* Buttons */
+
+.btn {
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 5px;
+    background-color: rgb(247, 247, 247);
+    box-shadow: 0 5px #999;
+    height: 35px;
+    width: 110px;
+    margin: 0 5px 20px;
+    vertical-align: middle;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    user-select: none;
 }
 
-.hat-hard {
-    width: 20px;
-    bottom: 10px;
+.btn:active {
+    background-color: rgb(185, 185, 185);
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
 }
 
-.pressed {
-    background-color: gray;
+.btn-selected {
+    background-color: rgb(192, 192, 192);
+    color: white;
 }
 
-.hidden {
+/* Timer Settings*/
+
+.timer-display {
+    font-size: 20px;
+    margin: 10px auto 15px;
+    width: 5%;
+    border: 1px solid rgb(170, 170, 170);
+    background-color: rgb(247, 247, 247);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 2px rgb(189, 189, 189);
+}
+
+/* Dark Mode Settings */
+
+.dark-mode-body  {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode-header {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode-click-region {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode-buttons {
+    background-color: black;
+    color: white;
+}
+
+
+/* Mobile Settings */
+
+.mobile {
     display: none;
 }
 
-.easy-target {
-    height: 50px;
-    width: 50px;
+@media screen and (max-width:900px) {
+    .mobile {
+        display: block;
+    }
+    .desktop {
+        display: none;
+    }
+    .btn {
+        width: 27%;
+    }
+    .logo-container {
+        padding-left: 0;
+    }
+    .options-container {
+        padding-right: 0;
+    }
+    #user-score {
+        width: 30%;
+    }
+    .timer-display {
+        width: 20%;
+    }
 }
 
-.medium-target {
-    height: 35px;
-    width: 35px;
-}
-
-.hard-target {
-    height: 20px;
-    width: 20px;
-}
-
-
-.light-dark-switch {
-    border: 1px solid black;
-    border-radius: 7px;
-    width: 75px;
-    height: 35px;
-    background-color: #393E46;
-    float: right;
-    margin-top: 30px;
-    margin-right: 3%;
-    cursor: pointer;
-}
-
-.dot-light {
-    background-color: white;
-    height: 29px;
-    width: 29px;
-    border-radius: 5px;
-    margin: 3px 3px;
-
-}
-
-.dot-dark {
-    background-color: #393E46;
-    height: 30px;
-    width: 30px;
-    border-radius: 5px;
-    float: right;
-    margin: 3px 3px;
-}
-
-.light-mode {
-    background-color: white;
-}
-
-.user-highscore {
-    width: 250px;
-    margin: auto;
-    padding-bottom: 10px;
-}
-
-#ball-color {
-    border: none;
-    height: 20px;
-    cursor: pointer;
-    background: none;
+/* At the bottom to override any other styles */
+.hidden {
+    display: none;
 }

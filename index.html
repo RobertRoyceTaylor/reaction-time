@@ -1,54 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reaction Time</title>
+    <title>Spot On</title>
     <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <!-- Google F  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
+
 <body class="">
-<!-- <h1 class="header title">Reaction Time</h1> -->
+    <!--  -->
+    <nav class="top-nav">
+        <div class="logo-container">
+            <h3 class="logo title">Spot On</h3>
+            <p class="logo">ver. 0.2</p>
+        </div>
+        <div class="options-container">
+            <h3 class="options title" id="volume"><img class="icon" id="volume-icon" src="images/volume-high.svg"
+                    alt="volume"></h3>
+            <!-- <h3 class="options title" id="light-dark-switch"><img class="icon" src="images/contrast.svg"
+                    alt="light-dark-mode"></h3> -->
+            <h3 class="options title"><input id="target-color" type="color"><img class="icon" src="images/droplet.svg"
+                    alt="color"></h3>
+        </div>
+    </nav>
 
-<header>
-    <div>
-       <!-- <span><input type="text"></span>  -->
-       <span><button class="btn" id="hat-toggle">Hat</button></span> 
-       <span><label for="">Ball Color: </label><input type="color" id="ball-color" value="#FF0000"></span> 
+    <p id="user-score">Score: 0 </p>
+    <div class="timer-display">
+        <div id="time"></div>
+    </div>
+    <div class="difficulty">
+        <button id="easy" class="btn btn-selected">Easy</button>
+        <button id="medium" class="btn">Medium</button>
+        <button id="hard" class="btn">Hard</button>
+    </div>
+    <div class="reset-container">
+        <button id="reset" class="btn hidden">Reset</button>
     </div>
 
-</header>
-<div>
-    <div class="light-dark-switch">
-        <div id="dot" class="dot-light"></div>
-    </div>
-</div>
-<h3 class="header start">Press Space or Click in Square to Start</h3>
-<p class="user-highscore">High Score: </p>
-
-<div class="difficulty">
-    <button class="btn easy btn-selected">Easy</button>   
-    <button class="btn medium">Medium</button>  
-    <button class="btn hard">Hard</button>
-</div>
-<div class="reset-container">
-    <button class="btn reset hidden">Reset</button>
-</div>
-<div class="timer-display"> 
-    <div id="time"></div>
-    <!-- <span id="min">00 </span> :
-    <span id="sec">00 </span> -->
-    <!-- <span id="ms">000</span> -->
-</div>
-<div class="click-region">
-    <div class="target hidden">
-        <div >
-            <img class="hat hidden"src="images/hat.png" alt="">
+    <div class="click-region" id="click-region">
+        <h3 class="mobile info" id="mobile-instructions">Tap to Start</h3>
+        <h3 class="desktop info" id="desktop-instructions">Press Space or Click to Start</h3>
+        <div class="target target-hide" id="target">
+            <div>
+                <!-- <img class="hat hidden"src="images/hat.png" alt=""> -->
+            </div>
         </div>
     </div>
-</div>   
 
-
-<script src="script.js"></script>
+    <footer>&copy; Copyright 2022 Robert Taylor</footer>
+    <script src="app.js"></script>
 </body>
+
 </html>

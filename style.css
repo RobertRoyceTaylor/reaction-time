@@ -36,8 +36,12 @@ footer {
     color: gray;
     position: fixed;
     width: 100%;
+    font-size: 16px;
 }
 
+.donate {
+    margin-top: 10px;
+}
 /* For Icons */
 .icon {
     height: 14px;
@@ -120,7 +124,7 @@ footer {
     margin: auto;
 
     width: 90%;
-    height: calc(100vh - 300px);
+    height: calc(100vh - 325px);
 
     overflow: auto;
 

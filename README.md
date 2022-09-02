@@ -1,40 +1,43 @@
-# reaction-time
+# SpotOn - A Reaction Based Game
 
-april 23, 2022
+A web browser app built using HTML, CSS, and JavaScript to improve hand-eye coordination with a mouse or touch screen.
 
-uploaded project file to github
-project is almost complete
-known bugs excluded from release:
-- timer won't update for difficulty
-- highscore not working as intended
-  
-known bugs included in release:
-- none
-to do:
-- fix the difficulty timer
-- fix the highscore not counting
-- add sound effect
-- visual overhaul
-  
-april 25, 2022
+## Table of Contents
+* [General Information](#general-information)
+* [Instructions](#instructions)
+* [Features](#features)
+* [Mobile vs. Computer](#mobile-vs-computer)
 
-fixed error on mobile devices where target would only appear on left half of screen
+### General Information
 
-may 9, 2022
+SpotOn - A Reaction Based Game was created as a project to practice working with HTML, CSS, and JavaScript. The idea was based upon the game [Aim Lab](https://store.steampowered.com/app/714010/Aim_Lab/) with the idea being instead of improving your aim for games such as Counter-Strike: Global Offensive, Valorant, or Apex Legends, you can improve your speed and accuracy on a phone or general usage with a mouse.  
 
-ver 0.2 released
-- fixed how the play area is calculated to be more accurate
-- overhauled the visuals to be more appealing
-  - made the buttons more stylish
-  - created a proper top nav bar
-  - added a watermark
-- added a sound effect to the ball
-- added the ability to enable and disable the sound effect
-- game length now changes with difficulty 
-  - easy = 15 sec + 50px target
-  - medium = 30 sec + 35px target
-  - hard = 60 sec + 20x target
 
-to do:
-- impliment dark mode
-- overhaul colors to be more pleasing and less clinical
+### Instructions
+
+SpotOn - A Reaction Based Game is very easy and intuitive to start. Once the page loads all you need to do is press the SPACE key or click within the play area to start. 
+The game three difficulty settings:
+* Easy
+    * Timer: 15 Seconds
+    * Target Size: 50px
+* Medium
+    * Timer: 30 Seconds
+    * Target Size: 35px
+* Hard
+    * Timer: 60 Seconds
+    * Target Size: 20px
+    
+
+These are accessed using the buttons and the top
+
+![Imgur](https://imgur.com/CcM4OZZ.jpg)
+
+SpotOn - A Reaction Based Game also allows the user to customize their experience. 
+
+
+
+### Features
+
+
+
+### Mobile vs. Computer

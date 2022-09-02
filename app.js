@@ -2,7 +2,6 @@
 
 
 //Gameplay Mechanics
-
 const target = document.getElementById("target");
 
 //px width of target to avoid collision (CHANGES UPON CHALLENGE)
@@ -17,49 +16,37 @@ const instructionDesktop = document.getElementById("desktop-instructions");
 
 //Calculate the bounds of play
 function areaCalculation() {
-
     let playArea = clickRegion.getBoundingClientRect();
     let playAreaHeight = playArea.height - targetBuffer;
     let playAreaWidth = playArea.width - targetBuffer;
-
     return [playAreaHeight, playAreaWidth];
 }
 
 //Default State of Game
-
 let gameStarted = false;
 let playerScore = 0;
 let playerHighscore = null; //FIX LATER!!!
 
-//Game timer
-
+//Game Timer
 const gameTimerDisplay = document.getElementById("time");
 let timeLength = 15; //Seconds
 let gameSeconds = timeLength;
 let gameInterval = null;
 time.innerHTML = gameSeconds;
 
-
-
 function gameTimer() {
 
     if (gameStarted === true) {
         gameSeconds--
     }
-
     let sec = gameSeconds % 60;
-
     if (sec < 10) {
         sec = sec;
     }
-
-
     time.innerHTML = `${sec}`
-
     if (sec == 0 && gameSeconds > 0) {
         time.innerHTML = "6" + `${sec}`
     }
-
     if (gameSeconds === 0) {
         clearInterval(gameInterval);
         gameInterval = null;
@@ -68,25 +55,21 @@ function gameTimer() {
 }
 
 //Timer Controls
-
 function startTimer() {
     if (gameInterval) {
         return
     }
     gameInterval = setInterval(gameTimer, 1000);
 }
-
 function stopTimer() {
     clearInterval(gameInterval);
     gameInterval = null;
 }
-
 function resetTimer() {
     stopTimer();
     gameSeconds = timeLength;
     time.innerHTML = gameSeconds;
 }
-
 function updateDisplay() {
     if (timeLength === 60) {
         time.innerHTML = "60"
@@ -95,29 +78,26 @@ function updateDisplay() {
 }
 
 //Play, Stop, and Reset game
-
 function startGame() {
 
     gameStarted = true;
-
+    //Calcuates the inital area based on screen size (dynamic)
     let playAreaStart = areaCalculation();
     let randomStartingHeight = Math.floor(Math.random() * playAreaStart[0]);
     let randomStartingWidth = Math.floor(Math.random() * playAreaStart[1]);
 
-
     instructionMobile.classList.add("hidden");
     instructionDesktop.classList.add("hidden");
 
+    //uses RNG to determine where the target will appear
     target.classList.remove("target-hide");
     target.style.top = randomStartingHeight + "px";
     target.style.left = randomStartingWidth + "px";
-
 
     easyMode.classList.add("hidden");
     mediumMode.classList.add("hidden");
     hardMode.classList.add("hidden");
     resetButton.classList.remove("hidden");
-
 
     playerScore = playerScore - 1;
     playerScore++
@@ -131,10 +111,13 @@ function nextTarget() {
     if (audioOn === true) {
         targetSound.play();
     }
+    //Calcuates the area based on screen size (dynamic)
+    //Include in next target incase the user's screen size changes (resizes window / rotates screen)
     let playAreaNext = areaCalculation();
     let randomNextHeight = Math.floor(Math.random() * playAreaNext[0]);
     let randomNextWidth = Math.floor(Math.random() * playAreaNext[1]);
 
+    //uses RNG to determine where the target will appear
     target.style.top = randomNextHeight + "px";
     target.style.left = randomNextWidth + "px";
 

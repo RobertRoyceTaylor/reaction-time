@@ -58,9 +58,10 @@ A list of upcoming features:
 
 * Dark Mode for easier night viewing
 * Seperate timer from difficulty
-      * Using 15 second intervals (15,30,45,60)
+   * 15 second intervals (15,30,45,60)
 * Endless Mode
-* Local Storage of HighScore
-      * Online leaderboards
+* Storage of HighScore
+   * Online leaderboards
+   * Ability to share scores via social media (twitter, facebook, reddit)
 
 

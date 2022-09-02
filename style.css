@@ -37,6 +37,7 @@ footer {
     position: fixed;
     width: 100%;
     font-size: 16px;
+    user-select: none;
 }
 
 .donate {
@@ -44,10 +45,10 @@ footer {
 }
 /* For Icons */
 .icon {
-    height: 14px;
-    width: 14px;
+    height: 17px;
     padding: 0 10px;
     user-select: none;
+    filter: contrast(0) brightness(0);
 }
 
 /* Color Selector */

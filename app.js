@@ -13,7 +13,6 @@ const clickRegion = document.getElementById("click-region");
 const playerScoreDisplay = document.getElementById("user-score")
 const instructionMobile = document.getElementById("mobile-instructions");
 const instructionDesktop = document.getElementById("desktop-instructions");
-const donateButton = document.querySelector(".donate");
 
 
 //Calculate the bounds of play
@@ -113,7 +112,6 @@ function startGame() {
     target.style.top = randomStartingHeight + "px";
     target.style.left = randomStartingWidth + "px";
 
-    donateButton.classList.add("target-hide");
 
     easyMode.classList.add("hidden");
     mediumMode.classList.add("hidden");
@@ -156,7 +154,6 @@ function resetGame() {
     mediumMode.classList.remove("hidden");
     hardMode.classList.remove("hidden");
     resetButton.classList.add("hidden");
-    donateButton.classList.remove("target-hide");
 
     gameStarted = false;
     playerScore = 0;
@@ -168,7 +165,6 @@ function gameOver() {
     stopTimer();
 
     target.classList.add("target-hide");
-    donateButton.classList.remove("target-hide");
 
 
 }

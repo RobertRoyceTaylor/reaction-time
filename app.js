@@ -1,10 +1,7 @@
-
-
-
 //Gameplay Mechanics
 const target = document.getElementById("target");
 
-//px width of target to avoid collision (CHANGES UPON CHALLENGE)
+//px width of target to avoid collision
 let targetSize = target.offsetHeight;
 let targetBuffer = targetSize + (targetSize * 0.1);
 
@@ -25,7 +22,7 @@ function areaCalculation() {
 //Default State of Game
 let gameStarted = false;
 let playerScore = 0;
-let playerHighscore = null; //FIX LATER!!!
+let playerHighscore = null;
 
 //Game Timer
 const gameTimerDisplay = document.getElementById("time");
@@ -234,15 +231,6 @@ targetColor.addEventListener("change", function () {
 
     target.style.backgroundColor = targetColor.value;
 })
-
-//Dark Mode (WIP)
-// const darkModeToggle = document.getElementById("light-dark-switch")
-
-// darkModeToggle.addEventListener("click", function () {
-//     document.querySelector("body").classList.toggle("dark-mode-body");
-//     document.querySelector(".top-nav").classList.toggle("dark-mode-header")
-
-// })
 
 
 //Audio
